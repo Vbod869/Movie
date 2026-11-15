@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08090d">
+    <meta name="description" content="Temukan dan putar film klasik gratis yang mencantumkan lisensi CC0 di Internet Archive. Periksa metadata hak penggunaan setiap item.">
+    <title>Layar — Koleksi Film Klasik</title>
+    <link rel="stylesheet" href="globals.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="splash-screen" id="splash-screen" role="status" aria-label="Layar sedang memuat">
+      <div class="splash-content">
+        <span class="splash-brand"><span class="brand-mark" aria-hidden="true"><span></span></span><span>layar<span class="brand-period">.</span></span></span>
+        <span class="splash-tagline">Gambar bergerak. Cerita yang tinggal.</span>
+        <span class="splash-loader" aria-hidden="true"><span></span></span>
+        <span class="splash-credit" data-text="BY @m.aryaputra_" aria-label="BY @m.aryaputra_">BY @m.aryaputra_</span>
+      </div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#beranda" aria-label="Layar, beranda">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span>layar<span class="brand-period">.</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Navigasi utama">
+        <a href="#koleksi">Koleksi</a>
+        <a href="#tentang">Tentang arsip</a>
+      </nav>
+
+    </header>
+
+    <main>
+      <section class="hero" id="beranda" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-rule"></span> BIOSKOP KLASIK, DIBUKA KEMBALI</p>
+          <h1 id="hero-title">Sebuah cerita<br>selalu <em>menemukan</em><br>jalannya.</h1>
+          <p class="hero-description">Jelajahi film klasik gratis dari Internet Archive. Setiap judul mencantumkan informasi lisensi dari pengunggah—buka sumbernya untuk memeriksa hak penggunaan.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#koleksi"><span class="button-play" aria-hidden="true">▶</span> Jelajahi koleksi</a>
+            <a class="text-link" href="https://archive.org/details/feature_films" target="_blank" rel="noreferrer">Lihat arsip <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-note"><span class="note-mark">CC0</span><span>Metadata lisensi dicantumkan oleh pemilik item.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Pilihan film dari arsip">
+          <div class="hero-art-frame">
+            <img id="feature-image" src="https://archive.org/services/img/Sita_Sings_the_Blues" alt="Poster film pilihan dari Internet Archive">
+            <div class="hero-art-shade"></div>
+            <div class="hero-art-index"><span>ARSIP TERBUKA</span><span id="feature-index">01 / 18</span></div>
+            <div class="hero-feature-copy">
+              <span class="feature-kicker">PILIHAN DARI ARSIP</span>
+              <h2 id="feature-title">Kisah yang tak lekang waktu</h2>
+              <p id="feature-meta">Film klasik · Internet Archive</p>
+              <button class="feature-play" id="feature-play" type="button"><span aria-hidden="true">▶</span> Putar film</button>
+            </div>
+          </div>
+          <span class="art-caption">SEBUAH PERJALANAN MELALUI GAMBAR BERGERAK</span>
+        </div>
+      </section>
+
+      <section class="catalog" id="koleksi" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-rule"></span> KOLEKSI FILM</p>
+            <h2 id="catalog-title">Temukan <em>yang berkesan.</em></h2>
+          </div>
+          <p class="section-intro">Jelajahi judul-judul pilihan dari koleksi film Internet Archive.</p>
+        </div>
+
+        <div class="catalog-search-wrap">
+          <span class="catalog-search-label">TEMUKAN FILM FAVORITMU</span>
+          <form class="catalog-search" id="search-form" role="search">
+        <button class="search-toggle" id="search-toggle" type="button" aria-label="Fokus ke pencarian" aria-expanded="true" aria-controls="search-input">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.7"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        </button>
+        <label class="sr-only" for="search-input">Cari judul film</label>
+        <input id="search-input" name="q" type="search" placeholder="Cari judul, film, atau kata kunci..." autocomplete="off">
+        <button type="submit" aria-label="Cari">Cari</button>
+      </form>
+        </div>
+
+        <div class="catalog-controls">
+          <div class="collection-tabs" role="group" aria-label="Urutkan film">
+            <button class="tab-button is-active" type="button" data-sort="downloads desc" aria-pressed="true">Pilihan</button>
+            <button class="tab-button" type="button" data-sort="publicdate desc" aria-pressed="false">Baru ditambahkan</button>
+          </div>
+          <div class="source-switch" role="group" aria-label="Sumber katalog">
+            <button class="source-switch-button is-active" type="button" data-source="archive" aria-pressed="true">Internet Archive</button>
+            <button class="source-switch-button" type="button" data-source="youtube" aria-pressed="false">YouTube Movies</button>
+          </div>
+          <div class="youtube-key-panel" id="youtube-key-panel" hidden>
+            <div class="youtube-key-copy">
+              <strong>Hubungkan YouTube Data API v3</strong>
+              <span>Masukkan API key Google Cloud untuk mencari video panjang yang mengizinkan embedding dan memiliki lisensi Creative Commons.</span>
+            </div>
+            <form id="youtube-key-form" class="youtube-key-form">
+              <label class="sr-only" for="youtube-api-key">YouTube API Key</label>
+              <input id="youtube-api-key" type="password" autocomplete="off" placeholder="Tempel YouTube API Key" aria-label="YouTube API Key">
+              <button type="submit">Simpan key</button>
+              <button type="button" id="youtube-key-clear" class="key-clear">Hapus</button>
+            </form>
+            <p class="youtube-key-hint">Untuk website statis, key dapat terlihat oleh pengunjung. Batasi key berdasarkan HTTP referrer/domain dan YouTube Data API v3 di Google Cloud. Lisensi Creative Commons dari API tetap perlu diperiksa pada halaman video.</p>
+          </div>
+          <div class="genre-list" id="genre-list" role="group" aria-label="Filter genre">
+            <button class="genre-chip is-active" type="button" data-genre="" aria-pressed="true">Semua</button>
+            <button class="genre-chip" type="button" data-genre="Drama" aria-pressed="false">Drama</button>
+            <button class="genre-chip" type="button" data-genre="Animation" aria-pressed="false">Animasi</button>
+            <button class="genre-chip" type="button" data-genre="Comedy" aria-pressed="false">Komedi</button>
+            <button class="genre-chip" type="button" data-genre="Horror" aria-pressed="false">Horor</button>
+            <button class="genre-chip" type="button" data-genre="Adventure" aria-pressed="false">Petualangan</button>
+          </div>
+        </div>
+
+        <div class="results-heading">
+          <div class="results-title-wrap"><span class="results-marker" aria-hidden="true"></span><h3 id="results-title">Pilihan dari arsip</h3><span class="results-count" id="results-count">Memuat koleksi</span></div>
+          <a class="source-link" id="catalog-source-link" href="https://archive.org/details/feature_films" target="_blank" rel="noreferrer">Sumber: Internet Archive <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="status-message" id="status-message" role="status" aria-live="polite">Menghubungkan ke koleksi film…</p>
+        <div class="movie-grid" id="movie-grid" aria-busy="true"></div>
+        <button class="load-more" id="load-more" type="button" hidden>Muat film lainnya <span aria-hidden="true">↓</span></button>
+      </section>
+
+      <section class="archive-note" id="tentang" aria-labelledby="archive-note-title">
+        <div class="archive-note-mark" aria-hidden="true">A</div>
+        <div class="archive-note-copy">
+          <p class="eyebrow">CATATAN LISENSI</p>
+          <h2 id="archive-note-title">Arsip terbuka, dengan konteks yang jelas.</h2>
+          <p>Daftar ini memfilter item yang mencantumkan CC0. Informasi lisensi berasal dari metadata unggahan dan tidak diverifikasi oleh aplikasi ini. Selalu periksa halaman sumber sebelum memakai atau membagikan film.</p>
+        </div>
+        <a class="button button-light" href="https://archive.org/details/feature_films" target="_blank" rel="noreferrer">Tentang Internet Archive <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#beranda" aria-label="Layar, kembali ke atas"><span class="brand-mark" aria-hidden="true"><span></span></span><span>layar<span class="brand-period">.</span></span></a>
+      <p>Gambar bergerak. Cerita yang tinggal.</p>
+      <span class="footer-credit">KOLEKSI DARI INTERNET ARCHIVE</span>
+    </footer>
+
+    <dialog class="player-dialog" id="player-dialog" aria-labelledby="player-title">
+      <div class="player-header">
+        <div><p class="player-kicker" id="player-kicker">INTERNET ARCHIVE · CC0 TERCANTUM</p><h2 id="player-title">Memuat film…</h2></div>
+        <button class="player-close" id="player-close" type="button" aria-label="Tutup pemutar">×</button>
+      </div>
+      <div class="video-stage">
+        <video id="film-video" controls playsinline preload="metadata" hidden></video>
+        <iframe id="youtube-player" title="Pemutar film YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+        <p class="player-status" id="player-status" role="status" aria-live="polite">Menyiapkan video…</p>
+      </div>
+      <p class="player-description" id="player-description"></p>
+      <section class="archive-community" id="archive-community" aria-label="Statistik dan ulasan Internet Archive">
+        <div class="archive-community-stats">
+          <div><strong id="archive-views">—</strong><span>TOTAL DILIHAT</span></div>
+          <div><strong id="archive-rating">—</strong><span>RATING RATA-RATA</span></div>
+          <div><strong id="archive-reviews-count">—</strong><span>JUMLAH ULASAN</span></div>
+        </div>
+        <div class="archive-reviews">
+          <div class="archive-reviews-heading"><p class="player-kicker">DARI KOMUNITAS INTERNET ARCHIVE</p><h3>Ulasan penonton</h3></div>
+          <div id="archive-reviews-list" aria-live="polite"><p class="archive-reviews-empty">Memuat ulasan…</p></div>
+        </div>
+      </section>
+      <div class="player-footer"><span id="player-footer-note">Periksa informasi hak cipta pada sumber.</span><a id="source-page" href="https://archive.org" target="_blank" rel="noreferrer">Buka sumber film <span aria-hidden="true">↗</span></a></div>
+    </dialog>
+  </body>
+</html>
